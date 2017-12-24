@@ -10,6 +10,24 @@ namespace Chpt25
     {
         static void Main(string[] args)
         {
+            AddStudent();
+            Console.ReadLine();
+        }
+
+        static async void AddStudent()
+        {
+            Student student = new Student()
+            {
+                FirstName = "ff",
+                LastName = "ss",
+                Company = "ms"
+            };
+
+            StudentData studentData = new StudentData();
+            Task<int> t = studentData.AddStudentAsync(student);
+
+            int num = await t;
+            Console.WriteLine(num);
         }
     }
 }

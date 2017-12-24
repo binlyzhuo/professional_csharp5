@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Chpt25
+{
+    public class StudentData
+    {
+        public async Task<int> AddStudentAsync(Student student)
+        {
+            var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Chpt25_DB"].ConnectionString);
+            await connection.OpenAsync();
+            try
+            {
+
+
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = "INSERT INTO Students " +
+                                      "(FirstName, LastName, Company) VALUES " +
+                                      "(@FirstName, @LastName, @Company)";
+                command.Parameters.AddWithValue("@FirstName", student.FirstName);
+                command.Parameters.AddWithValue("@LastName", student.LastName);
+                command.Parameters.AddWithValue("@Company", student.Company);
+
+                Task<int> t = command.ExecuteNonQueryAsync();
+
+
+                return await t;
+            }
+            
+            finally
+            {
+                connection.Close();
+            }
+            
+        }
+    }
+}
