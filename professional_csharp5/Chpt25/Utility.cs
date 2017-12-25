@@ -19,5 +19,11 @@ namespace Chpt25
             Console.WriteLine("Local ID:{0}",ti.LocalIdentifier);
             Console.WriteLine("Distributed ID:{0}",ti.DistributedIdentifier);
         }
+
+        public static bool AbortTx()
+        {
+            Console.WriteLine("Abort the Transaction (y/n)?");
+            return Console.ReadLine().ToLower().Equals("y");
+        }
     }
 }
