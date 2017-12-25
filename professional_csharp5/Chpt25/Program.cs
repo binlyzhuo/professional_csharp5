@@ -27,6 +27,8 @@ namespace Chpt25
             Task<int> t = studentData.AddStudentAsync(student);
 
             int num = await t;
+
+            await CommittableSamples.CommitTableTransactionAsync();
             Console.WriteLine(num);
         }
     }
