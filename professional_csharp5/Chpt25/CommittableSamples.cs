@@ -35,5 +35,38 @@ namespace Chpt25
 
             Utility.DisplayTransactionInfo("Tx Completed:",tx.TransactionInformation);
         }
+
+        public static void TransactionPromotion()
+        {
+            var tx = new CommittableTransaction();
+            Utility.DisplayTransactionInfo("TX Created",tx.TransactionInformation);
+
+            try
+            {
+                var db = new StudentData();
+                var s1 = new Student()
+                {
+                    FirstName = "Z1",LastName = "ff", Company = "fff"
+                };
+
+                db.AddStudent(s1, tx);
+
+                var s2 = new Student()
+                {
+                    FirstName = "first0", LastName = "last", Company = "COM"
+                };
+
+                db.AddStudent(s2,tx);
+                Utility.DisplayTransactionInfo("2nd connection enlished",tx.TransactionInformation);
+                tx.Commit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine();
+                tx.Rollback();
+            }
+
+        }
     }
 }

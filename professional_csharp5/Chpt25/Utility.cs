@@ -12,7 +12,7 @@ namespace Chpt25
     {
         public static void DisplayTransactionInfo(string title, TransactionInformation ti)
         {
-            Contract.Requires<ArgumentNullException>(ti != null);
+            //Contract.Requires<ArgumentNullException>(ti != null);
 
             Console.WriteLine(title);
             Console.WriteLine("CreateTime:{0}",ti.CreationTime);

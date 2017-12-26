@@ -29,6 +29,8 @@ namespace Chpt25
             int num = await t;
 
             await CommittableSamples.CommitTableTransactionAsync();
+
+            CommittableSamples.TransactionPromotion();
             Console.WriteLine(num);
         }
     }
