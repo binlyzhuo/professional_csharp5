@@ -44,7 +44,7 @@ namespace Chpt10
             if (format == null)
                 format = "N";
 
-            switch (format.ToLower())
+            switch (format.ToUpper())
             {
                 case "N":
                     return ToString();
