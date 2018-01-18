@@ -19,6 +19,11 @@ namespace Chpt10
             Racer racer = new Racer(1,"ZZ","DD","ZH",10);
             Console.WriteLine(racer.ToString("A"));
 
+            List<Racer> racerList = new List<Racer>();
+            racerList.Add(racer);
+
+            var person = racerList.ConvertAll<Person>(r => new Person(r.FirstName + "" + r.LastName));
+
             Console.ReadLine();
         }
     }
