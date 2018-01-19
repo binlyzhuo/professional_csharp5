@@ -37,6 +37,27 @@ namespace Chpt10
                 Thread.Sleep(new Random().Next(20));
             }
 
+            var alphabet = new Stack<char>();
+
+            alphabet.Push('A');
+            alphabet.Push('B');
+            alphabet.Push('C');
+
+            Console.WriteLine("First ieration:");
+
+            foreach (var item in alphabet)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Second iteration:");
+            while (alphabet.Count>0)
+            {
+                Console.WriteLine(alphabet.Pop());
+            }
+
+            //int aAscii = 'A';
+
             Console.ReadLine();
         }
     }
