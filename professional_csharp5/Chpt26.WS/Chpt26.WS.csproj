@@ -98,6 +98,7 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChatUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ws.ashx.cs">
       <DependentUpon>ws.ashx</DependentUpon>
@@ -105,7 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
