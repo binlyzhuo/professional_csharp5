@@ -11,6 +11,8 @@ namespace Chpt10
         public string Title { set; get; }
         public string Content { set; get; }
 
+
+
         public Document(string title, string content)
         {
             this.Title = title;
