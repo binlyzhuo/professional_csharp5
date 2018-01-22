@@ -120,6 +120,11 @@ namespace Chpt10
                 Console.WriteLine(team);
             }
 
+            using (MyClass myClass = new MyClass())
+            {
+
+            }
+
             Console.ReadLine();
         }
     }
