@@ -23,7 +23,9 @@ namespace Chpt24.FileProperties
         private void button1_Click(object sender, EventArgs e)
         {
             DirectoryInfo inputDir = new DirectoryInfo(textBoxInput.Text);
-            var subDir = inputDir.GetDirectories();
+            //var subDir = inputDir.GetDirectories();
+
+            DisplayFolderList(textBoxInput.Text);
         }
 
         protected void DisplayFolderList(string folderFullName)
@@ -33,6 +35,21 @@ namespace Chpt24.FileProperties
             {
                 throw new DirectoryNotFoundException("Folder not found:"+folderFullName);
             }
+
+            textBoxFolder.Text = theFolder.FullName;
+            currentFolderPath = theFolder.FullName;
+
+            foreach (var nextFolder in theFolder.GetDirectories())
+            {
+                listBoxFolder.Items.Add(nextFolder.Name);
+            }
+
+            foreach (var nextFile in theFolder.GetFiles())
+            {
+                listBoxFiles.Items.Add(nextFile.Name);
+            }
         }
+
+
     }
 }
