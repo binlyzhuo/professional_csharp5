@@ -11,11 +11,14 @@ namespace Chpt24
     {
         static void Main(string[] args)
         {
-            using (FileStream fs = File.Open(@"d:\1234.txt",FileMode.OpenOrCreate))
-            {
+            Console.WriteLine("file~");
+            //using (FileStream fs = File.Open(@"d:\1234.txt",FileMode.OpenOrCreate))
+            //{
 
-                fs.WriteByte(65);
-            }
+            //    fs.WriteByte(65);
+            //}
+
+            Console.ReadLine();
         }
     }
 }
